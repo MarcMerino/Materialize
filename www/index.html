@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self' https://code.jquery.com fonts.gstatic.com data: gap: https://ssl.gstatic.com https://musicbrainz.org 'unsafe-eval'; style-src 'self' fonts.googleapis.com 'unsafe-inline'; media-src *; img-src 'self' data: content:;">
+  <meta name="format-detection" content="telephone=no">
+  <meta name="msapplication-tap-highlight" content="no">        
+  <title>Starter Template - Materialize</title>
+
+  <!-- CSS  -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+</head>
+<body>
+  <nav class="blue" role="navigation">
+    <div class="nav-wrapper container"><a id="logo-container" href="#" class="brand-logo">Logo</a>
+      <ul class="right hide-on-med-and-down">
+        <li><a href="#">Navbar Link</a></li>
+      </ul>
+
+      <ul id="nav-mobile" class="sidenav">
+        <li><a href="#">Navbar Link</a></li>
+      </ul>
+      <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+    </div>
+  </nav>
+
+  <nav class="breadcrumb-nav">
+    <div class="nav-wrapper light-blue">
+      <div class="col s12 padding-left-custom">
+        <a id="searchTab" href="#tab1" class="breadcrumb">Search Artists</a>
+        <a id="detailsTab" href="#tab2" class="breadcrumb">Details</a>
+        <a id="exportTab" href="#tab3" class="breadcrumb">Export Data</a>
+      </div>
+    </div>
+  </nav>
+
+  <div id="tab1">
+    <div class="row">
+      <form>
+        <div class="row padding-custom">
+          <div class="input-field">
+            <input placeholder="Filter" id="artistName" type="text" class="validate">
+            <label for="artistName">Artist / Group name</label>
+          </div>
+        </div>
+      </form>
+    </div class="center borderTemp">
+      <button class="btn waves-effect waves-light center" id="submitButton" type="submit" name="action">Submit
+        <i class="material-icons right"></i>
+      </button>
+  </div>
+  <div id="tab2" class="col s12">
+    <ul id="list-tab" class="collection">
+      
+    </ul>
+  </div>
+  <div id="tab3" class="col s12"></div>
+
+  <!-- Scripts -->
+  <script src="cordova.js"></script>
+  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script src="js/materialize.js"></script>
+  <script src="js/init.js"></script>
+
+  </body>
+</html>
