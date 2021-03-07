@@ -1,69 +1,71 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self' https://code.jquery.com fonts.gstatic.com data: gap: https://ssl.gstatic.com https://musicbrainz.org 'unsafe-eval'; style-src 'self' fonts.googleapis.com 'unsafe-inline'; media-src *; img-src 'self' data: content:;">
-  <meta name="format-detection" content="telephone=no">
-  <meta name="msapplication-tap-highlight" content="no">        
-  <title>Starter Template - Materialize</title>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self' https://code.jquery.com fonts.gstatic.com data: gap: https://ssl.gstatic.com https://musicbrainz.org 'unsafe-eval'; style-src 'self' fonts.googleapis.com 'unsafe-inline'; media-src *; img-src 'self' data: content:;">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="msapplication-tap-highlight" content="no">        
+    <title>Starter Template - Materialize</title>
 
-  <!-- CSS  -->
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
-  <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
-</head>
-<body>
-  <nav class="blue" role="navigation">
-    <div class="nav-wrapper container"><a id="logo-container" href="#" class="brand-logo">Logo</a>
-      <ul class="right hide-on-med-and-down">
-        <li><a href="#">Navbar Link</a></li>
+    <!-- CSS  -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+    <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  </head>
+  <body>
+    <div class="max-height-100">
+      <nav class="grey darken-4" role="navigation">
+        <div class="nav-wrapper container"><a id="logo-container" href="#" class="brand-logo">Artlists</a>
+          <ul class="right hide-on-med-and-down">
+            <li><a href="#">By Marc Merino</a></li>
+          </ul>
+    
+          <ul id="nav-mobile" class="sidenav">
+            <li><a href="#">By Marc Merino</a></li>
+          </ul>
+          <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+        </div>
+      </nav>
+      
+      <ul id="tabs-swipe" class="row tabs grey darken-3">
+        <li class="tab col s6"><a class="active" href="#tab1">Search</a></li>
+        <li class="tab col s6"><a class="white-text" href="#tab2">Results</a></li>
       </ul>
-
-      <ul id="nav-mobile" class="sidenav">
-        <li><a href="#">Navbar Link</a></li>
-      </ul>
-      <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
-    </div>
-  </nav>
-
-  <nav class="breadcrumb-nav">
-    <div class="nav-wrapper light-blue">
-      <div class="col s12 padding-left-custom">
-        <a id="searchTab" href="#tab1" class="breadcrumb">Search Artists</a>
-        <a id="detailsTab" href="#tab2" class="breadcrumb">Details</a>
-        <a id="exportTab" href="#tab3" class="breadcrumb">Export Data</a>
-      </div>
-    </div>
-  </nav>
-
-  <div id="tab1">
-    <div class="row">
-      <form>
-        <div class="row padding-custom">
-          <div class="input-field">
-            <input placeholder="Filter" id="artistName" type="text" class="validate">
-            <label for="artistName">Artist / Group name</label>
+      
+      <div class="max-height-100" style="height: 100% !important;">
+        <div id="tab1">
+          <div class="row">
+            <form>
+              <div class="row padding-custom center-align">
+                <div class="input-field">
+                  <input placeholder="Filter" id="artistName" type="text" class="validate grey-text text-darken-3">
+                  <label class="grey-text text-darken-3" for="artistName">Artist / Group name</label>
+                </div>
+              </div>
+            </form>
+          </div>
+          <div class="center-align">
+            <button class="btn waves-effect waves-light grey darken-3" style="width: 15%; min-width: 85px;" id="submitButton" type="submit" name="action">Search
+              <i class="material-icons right"></i>
+            </button>
           </div>
         </div>
-      </form>
-    </div class="center borderTemp">
-      <button class="btn waves-effect waves-light center" id="submitButton" type="submit" name="action">Submit
-        <i class="material-icons right"></i>
-      </button>
-  </div>
-  <div id="tab2" class="col s12">
-    <ul id="list-tab" class="collection">
       
-    </ul>
-  </div>
-  <div id="tab3" class="col s12"></div>
-
-  <!-- Scripts -->
-  <script src="cordova.js"></script>
-  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-  <script src="js/materialize.js"></script>
-  <script src="js/init.js"></script>
+        <div id="tab2" class="col s12 overflow-visible">
+          <ul id="list-tab" class="collection overflow-visible">
+            
+          </ul>
+        </div>
+      </div>
+    
+    </div>
+    
+    <!-- Scripts -->
+    <script src="cordova.js"></script>
+    <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script src="js/materialize.js"></script>
+    <script src="js/init.js"></script>
 
   </body>
 </html>

@@ -2,7 +2,7 @@
   $(function(){
  
     $('.sidenav').sidenav();
-    
+    $('.tabs').tabs({"swipeable":true});
     
   });
 })(jQuery); // end of jQuery name space
@@ -17,21 +17,35 @@ function onDeviceReady() {
     document.getElementById("submitButton").onclick = function() {
       clearItems();
       doQuery(inputFilter.value);
+
+      var tabs = document.getElementById("tabs-swipe");
+      var tabsInstance = M.Tabs.getInstance(tabs);
+      tabsInstance.select("tab2");
+
+      inputFilter.value = "";
     };
 
-    M.Breadcrumb.getInstance();
+    $(".carousel")[0].style = "height: 100%; overflow-y: scroll";
+
     //document.getElementById('deviceready').classList.add('ready');
 }
 
 function doQuery(filter) {
+  filter = filter.replace(/([^\w_\-,.?])+/g,"").replace(/([\s+])/g," ");
+  
   $.ajax({
     method: "GET",
     url: "https://musicbrainz.org/ws/2/artist?query=" + filter,
     dataType: "json",
   }).done(function (msg) {
     for(var item in msg.artists) {
+      console.log(msg.artists[item]);
       if (msg.artists[item].disambiguation === undefined) {
-        addItem(msg.artists[item].name, msg.artists[item].area.name);
+        if (msg.artists[item].area === undefined) {
+          addItem(msg.artists[item].name, " ");
+        } else {
+          addItem(msg.artists[item].name, msg.artists[item].area.name);
+        }
       } else {
         addItem(msg.artists[item].name, msg.artists[item].disambiguation);
       }
